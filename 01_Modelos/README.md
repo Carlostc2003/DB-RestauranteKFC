@@ -9,3 +9,6 @@
 - `PROVEEDOR.telefono` es un atributo multivaluado, ya que un proveedor puede disponer de varios números de teléfono.
 - `CLIENTE_FIDELIZADO.edad` es un atributo derivado que se obtiene a partir de `CLIENTE_FIDELIZADO.fecha_nacimiento`.
 - `COCINERO.cantPedidosR` y `CAJERO.cantPedidosA` son atributos derivados, obtenidos de otros datos y no se representan directamente en el modelo.
+
+Puedes interactuar con el modelo utilizando **ERDPlus** https://erdplus.com.  
+Solo tienes que abrir el archivo [`ModeloEER.erdplus`](ModeloEER.erdplus) y cargarlo en la herramienta para editar, visualizar o exportar el diagrama de manera dinámica.
