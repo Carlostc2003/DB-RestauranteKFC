@@ -81,6 +81,7 @@
 |----------|---------------|------------|---------------------|
 | `dni`      | CHAR(9)       | PK         | Identificador empleado |
 | `idLocal`  | INT           | FK         | Local donde trabaja     |
+| `dniCliente`  | CHAR(9)           | FK         | Trabajador que es cliente fidelizado     |
 | `nombre`   | VARCHAR(128)  |            | Nombre del trabajador   |
 
 ## LIMPIEZA
@@ -93,6 +94,32 @@
 |---------------|---------------|------------|-------------------------|
 | `dniTrabajador` | CHAR(9)       | PK, FK     | Trabajador que limpia    |
 | `idLocal`       | INT           | PK, FK     | Local que es limpiado    |
+
+## COCINERO
+| Columna       | Tipo de Datos | Restriccion | Descripcion             |
+|---------------|---------------|------------|-----------------------|
+| `dniTrabajador` | CHAR(9)       | PK, FK     | Identificador cocinero |
+
+## REALIZAR
+| Columna       | Tipo de Datos | Restriccion | Descripcion               |
+|---------------|---------------|------------|-------------------------|
+| `dniTrabajador` | CHAR(9)       | PK, FK     | Trabajador que cocina    |
+| `numPedido`       | INT           | PK, FK     | Pedido que se ha realizado    |
+| `idLocal`       | INT           | PK, FK     | Local desde que se ha realizado    |
+| `fecha`       | DATETIME           | PK     | Fecha del pedido realizado   |
+
+## CAJERO
+| Columna       | Tipo de Datos | Restriccion | Descripcion             |
+|---------------|---------------|------------|-----------------------|
+| `dniTrabajador` | CHAR(9)       | PK, FK     | Identificador cajero |
+
+## ATENDER
+| Columna       | Tipo de Datos | Restriccion | Descripcion               |
+|---------------|---------------|------------|-------------------------|
+| `dniTrabajador` | CHAR(9)       | PK, FK     | Trabajador que atiende pedidos    |
+| `numPedido`       | INT           | PK, FK     | Pedido que se ha atendido    |
+| `idLocal`       | INT           | PK, FK     | Local desde que se ha atendido    |
+| `fecha`       | DATETIME           | PK     | Fecha del pedido atendido   |
 
 ## ENCARGADO
 | Columna       | Tipo de Datos | Restriccion | Descripcion               |
