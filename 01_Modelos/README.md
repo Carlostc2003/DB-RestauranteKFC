@@ -24,7 +24,171 @@ Solo tienes que abrir el archivo [`ModeloEER.erdplus`](ModeloEER.erdplus) y carg
 
 ## MODELO RELACIONAL
 
-![Modelo Relacional Cadena de Restauración](ModeloRelacional.png)
+```mermaid
+classDiagram
+direction BT
+
+class ATENDER {
+   char(9) dniTrabajador
+   int unsigned numPedido
+   int unsigned idLocal
+   datetime fecha
+}
+class CAJERO {
+   char(9) dniTrabajador
+}
+class CLIENTE_FIDELIZADO {
+   varchar(128) nombre
+   date fecha_nacimiento
+   int edad
+   char(9) dni
+}
+class COCINAR {
+   char(9) dniTrabajador
+   int unsigned numPedido
+   int unsigned idLocal
+   datetime fecha
+}
+class COCINERO {
+   char(9) dniTrabajador
+}
+class ENCARGADO {
+   char(9) dniTrabajador
+}
+class ESTAR {
+   int unsigned idLocal
+   char(2) isoPais
+}
+class INCIDENCIA {
+   text descripcion
+   int unsigned id_incidencia
+}
+class INGREDIENTE {
+   varchar(128) nombre
+   int unsigned idReceta
+}
+class LIMPIAR {
+   char(9) dniTrabajador
+   int unsigned idLocal
+}
+class LIMPIEZA {
+   char(9) dniTrabajador
+}
+class LOCAL {
+   varchar(128) nombre
+   varchar(64) ciudad
+   varchar(64) calle
+   varchar(8) numero
+   char(5) codigo_postal
+   int unsigned id_local
+}
+class PAIS {
+   varchar(64) nombre
+   char(3) moneda
+   int poblacion
+   char(2) codigo_iso
+}
+class PEDIDO {
+   datetime fecha
+   varchar(128) nombre_cliente
+   char(9) dniCliente
+   decimal(10,2) total_precio
+   decimal(10,2) total_iva
+   int unsigned numero_pedido
+   int unsigned idLocal
+}
+class POSEER {
+   char(9) dniCliente
+   char(2) isoPais
+}
+class PROVEEDOR {
+   varchar(128) nombre
+   char(9) nif
+}
+class PROVEER {
+   char(9) nifProveedor
+   char(2) isoPais
+}
+class RECETA {
+   varchar(64) nombre
+   int unsigned id_receta
+}
+class REGISTRAR {
+   int unsigned idLocal
+   char(9) dniTrabajador
+   int unsigned idIncidencia
+}
+class TELEFONO {
+   char(9) nifProveedor
+   varchar(16) numero
+}
+class TRABAJADOR {
+   varchar(128) nombre
+   char(9) dniCliente
+   char(9) dni
+}
+class TRABAJAR {
+   int unsigned idLocal
+   char(9) dniTrabajador
+}
+class TRABAJO {
+   datetime fecha
+   int unsigned idLocal
+   char(9) dniTrabajador
+}
+class USAR {
+   int unsigned idReceta
+   char(2) isoPais
+}
+
+ATENDER --> PEDIDO : numPedido,idLocal → numero_pedido,idLocal
+ATENDER --> TRABAJADOR : dniTrabajador → dni
+
+CAJERO --> TRABAJADOR : dniTrabajador → dni
+
+COCINAR --> PEDIDO : numPedido,idLocal → numero_pedido,idLocal
+COCINAR --> TRABAJADOR : dniTrabajador → dni
+
+COCINERO --> TRABAJADOR : dniTrabajador → dni
+
+ENCARGADO --> TRABAJADOR : dniTrabajador → dni
+
+ESTAR --> LOCAL : idLocal → id_local
+ESTAR --> PAIS : isoPais → codigo_iso
+
+INGREDIENTE --> RECETA : idReceta → id_receta
+
+LIMPIAR --> LOCAL : idLocal → id_local
+LIMPIAR --> TRABAJADOR : dniTrabajador → dni
+
+LIMPIEZA --> TRABAJADOR : dniTrabajador → dni
+
+PEDIDO --> CLIENTE_FIDELIZADO : dniCliente → dni
+PEDIDO --> LOCAL : idLocal → id_local
+
+POSEER --> CLIENTE_FIDELIZADO : dniCliente → dni
+POSEER --> PAIS : isoPais → codigo_iso
+
+PROVEER --> PAIS : isoPais → codigo_iso
+PROVEER --> PROVEEDOR : nifProveedor → nif
+
+REGISTRAR --> INCIDENCIA : idIncidencia → id_incidencia
+REGISTRAR --> TRABAJO : idLocal → idLocal
+REGISTRAR --> TRABAJO : dniTrabajador → dniTrabajador
+
+TELEFONO --> PROVEEDOR : nifProveedor → nif
+
+TRABAJADOR --> CLIENTE_FIDELIZADO : dniCliente → dni
+
+TRABAJAR --> LOCAL : idLocal → id_local
+TRABAJAR --> TRABAJADOR : dniTrabajador → dni
+
+TRABAJO --> ENCARGADO : dniTrabajador → dniTrabajador
+TRABAJO --> LOCAL : idLocal → id_local
+
+USAR --> PAIS : isoPais → codigo_iso
+USAR --> RECETA : idReceta → id_receta
+```
 
 ### PAIS (`codigo_iso`, `nombre`, `moneda`, `poblacion`)  
 **PK:** (`codigo_iso`)
