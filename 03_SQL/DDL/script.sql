@@ -114,7 +114,7 @@ CREATE TABLE PEDIDO (
     nombre_cliente VARCHAR(128),
     dniCliente CHAR(9),
     total_precio DECIMAL(10,2),
-    total_iva DECIMAL(10,2) AS (total_precio * 0.21) VIRTUAL,
+    total_iva DECIMAL(10,2) AS (total_precio * 1.21) VIRTUAL,
     CONSTRAINT PK_PEDIDO PRIMARY KEY (numero_pedido, idLocal),
     CONSTRAINT FK_LOCAL FOREIGN KEY (idLocal) REFERENCES LOCAL(id_local)
         ON DELETE CASCADE
