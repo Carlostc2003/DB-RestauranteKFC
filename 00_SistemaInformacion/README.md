@@ -8,7 +8,7 @@ el cual puede ser que un local no tenga un nombre definido.
 
 Cada local cuenta con varios trabajadores, entre ellos, hay trabajadores de limpieza que pueden limpiar muchos locales,  
 de cocina que pueden realizar los pedidos al mismo tiempo de dicho local, cajero que también atienden los pedidos y pueden hacerlo al mismo tiempo, además de un encargado por cada local,  
-en los que se guardan su dni y su nombre. Cada trabajador solo puede dedicarse a una labor, pero puede trabajar en 2 locales máximo, y el encargado trabaja dirigiendo varios locales.  
+en los que se guardan su dni y su nombre. Cada trabajador puede tener varios puestos de trabajo y puede trabajar en 2 locales, menos los de limpieza, y el encargado trabaja dirigiendo un solo local.  
 
 Los encargados deben registrar las incidencias ocasionadas durante su trabajo.  
 Las incidencias tienen un código de identificación y una descripción, y se sabe la fecha de las veces que va el encargado a trabajar.  
