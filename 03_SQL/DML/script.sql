@@ -140,7 +140,8 @@ INSERT INTO PEDIDO (numero_pedido, idLocal, fecha, nombre_cliente, dniCliente, t
 (2, 7, '2025-12-24 15:00:00', 'Michael Scott', NULL, 27.80),
 (1, 8, '2025-12-15 15:20:00', 'Siti Aminah', NULL, 30.00),
 (93, 9, '2025-12-15 15:20:00', 'Hans Keller', NULL, 45.00),
-(13, 10, '2025-12-08 16:10:00', 'Li Wei', NULL, 38.60);
+(13, 10, '2025-12-08 16:10:00', 'Li Wei', NULL, 38.60),
+(25, 1, '2025-12-08 16:10:00', 'Wan Pa Tan', NULL, 148.20);
 
 INSERT INTO TRABAJADOR (dni, nombre, dniCliente) VALUES
 ('10101010A', 'James Wilson', NULL),
@@ -160,6 +161,8 @@ INSERT INTO TRABAJAR (idLocal, dniTrabajador) VALUES
 (3, '32323232C'),
 (4, '43434343D'),
 (5, '43434343D'),
+(3, '54545454E'),
+(9, '54545454E'),
 (6, '65656565F'),
 (7, '76767676G'),
 (8, '87878787H'),
@@ -169,7 +172,7 @@ INSERT INTO TRABAJAR (idLocal, dniTrabajador) VALUES
 INSERT INTO LIMPIEZA (dniTrabajador) VALUES
 ('10101010A'),
 ('21212121B'),
-('32323232C'),
+('32323232C');
 
 INSERT INTO LIMPIAR (dniTrabajador, idLocal) VALUES
 ('10101010A', 1),
@@ -190,16 +193,16 @@ INSERT INTO COCINERO (dniTrabajador) VALUES
 ('65656565F');
 
 INSERT INTO COCINAR (dniTrabajador, numPedido, idLocal, fecha) VALUES
-('10101010A', 50, 1, '2025-12-08 12:30:00'),
-('10101010A', 51, 1, '2025-12-08 12:30:00'),
-('43434343D', 41, 4, '2025-12-08 15:00:00'),
-('43434343D', 41, 4, '2025-12-08 16:00:00'),
+('10101010A', 1, 1, '2025-12-08 12:30:00'),
+('43434343D', 41, 4, '2025-12-08 13:45:00'),
+('43434343D', 5, 5, '2025-12-28 14:30:00'),
 ('54545454E', 3, 3, '2025-12-18 13:15:00'),
-('54545454E', 93, 9, '2025-12-15 15:20:00'),
 ('65656565F', 42, 6, '2025-12-08 14:30:00'),
-('65656565F', 13, 10, '2025-12-08 16:10:00'),
-('10101010A', 1, 5, '2025-12-08 12:50:00'),
-('43434343D', 5, 7, '2025-12-28 14:50:00');
+('10101010A', 25, 1, '2025-12-08 12:30:00'),
+('54545454E', 93, 9, '2025-12-15 15:20:00'),
+('43434343D', 41, 4, '2025-12-09 13:45:00'),
+('65656565F', 42, 6, '2025-12-09 14:30:00'),
+('10101010A', 1, 1, '2025-12-09 12:30:00');
 
 INSERT INTO CAJERO (dniTrabajador) VALUES
 ('21212121B'),
@@ -228,15 +231,9 @@ INSERT INTO ENCARGADO (dniTrabajador) VALUES
 
 INSERT INTO TRABAJO (idLocal, dniTrabajador, fecha) VALUES
 (1, '00000000A', '2025-12-08 09:00:00'),
-(1, '00000000A', '2025-12-08 14:00:00'),
 (2, '11111111B', '2025-12-08 10:00:00'),
-(2, '11111111B', '2025-12-08 15:00:00'),
 (7, '76767676G', '2025-12-08 11:00:00'),
-(7, '76767676G', '2025-12-08 16:00:00'),
-(8, '87878787H', '2025-12-08 09:30:00'),
-(8, '87878787H', '2025-12-08 13:30:00'),
-(1, '00000000A', '2025-12-09 09:00:00'),
-(2, '11111111B', '2025-12-09 10:00:00');
+(8, '87878787H', '2025-12-08 09:30:00');
 
 INSERT INTO INCIDENCIA (id_incidencia, descripcion) VALUES
 (1, 'Cliente se queja de la demora en la entrega'),
@@ -250,15 +247,14 @@ INSERT INTO INCIDENCIA (id_incidencia, descripcion) VALUES
 (9, 'Limpieza insuficiente del local'),
 (10, 'Error en la preparación de la receta');
 
-
 INSERT INTO REGISTRAR (idLocal, dniTrabajador, idIncidencia) VALUES
 (1, '00000000A', 1),
 (1, '00000000A', 6),
 (2, '11111111B', 2),
 (2, '11111111B', 4),
-(3, '76767676G', 3),
-(3, '76767676G', 9),
-(4, '87878787H', 5),
-(4, '87878787H', 7),
+(7, '76767676G', 3),
+(7, '76767676G', 9),
+(8, '87878787H', 5),
+(8, '87878787H', 7),
 (1, '00000000A', 10),
 (2, '11111111B', 8);
