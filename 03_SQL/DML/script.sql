@@ -131,29 +131,29 @@ INSERT INTO ESTAR (idLocal, isoPais) VALUES
 (10, 'HK');
 
 INSERT INTO PEDIDO (numero_pedido, idLocal, fecha, nombre_cliente, dniCliente, total_precio) VALUES
-(1, 1, '2025-12-08 12:30:00', 'John Smith', '00000000A', 25.50),
-(2482, 2, '2025-12-08 13:00:00', 'Carlos Pérez', '11111111B', 40.00),
-(3, 3, '2025-12-18 13:15:00', 'Marie Dubois', '22222222C', 32.75),
-(41, 4, '2025-12-08 13:45:00', 'Hiroshi Tanaka', '33333333D', 28.90),
-(5, 5, '2025-12-28 14:30:00', 'Lukas Müller', '44444444E', 35.20),
-(42, 6, '2025-12-08 14:30:00', 'Anna Lee', NULL, 22.50), -- UN CLIENTE PUEDE NO ESTAR FIDELIZADO
-(2, 7, '2025-12-24 15:00:00', 'Michael Scott', NULL, 27.80),
+(1, 1, '2025-12-08 12:30:00', 'Mina Botieso', '00000000A', 25.50),
+(2482, 2, '2025-12-08 13:00:00', 'María Umpa Jote', '11111111B', 40.00),
+(3, 3, '2025-12-18 13:15:00', 'Marisa Caletxe', '22222222C', 32.75),
+(41, 4, '2025-12-08 13:45:00', 'Kashime Kago', '33333333D', 28.90),
+(5, 5, '2025-12-28 14:30:00', 'Pepe Lotudo', '44444444E', 35.20),
+(42, 6, '2025-12-08 14:30:00', 'Joseba Jatangas', NULL, 22.50), -- UN CLIENTE PUEDE NO ESTAR FIDELIZADO
+(2, 7, '2025-12-24 15:00:00', 'Felipe Neduro', NULL, 27.80),
 (1, 8, '2025-12-15 15:20:00', 'Siti Aminah', NULL, 30.00), -- UN NÚMERO DE PEDIDO PUEDE REPETIRSE EN OTRO LOCAL
 (93, 9, '2025-12-15 15:20:00', 'Hans Keller', NULL, 45.00),
 (13, 10, '2025-12-08 16:10:00', 'Li Wei', NULL, 38.60),
 (25, 1, '2025-12-08 16:10:00', 'Wan Pa Tan', NULL, 148.20);
 
 INSERT INTO TRABAJADOR (dni, nombre, dniCliente) VALUES
-('10101010A', 'James Wilson', NULL), -- UN TRABAJADOR PUEDE NO ESTAR FIDELIZADO
-('21212121B', 'Paco Paquetes', NULL),
-('32323232C', 'Takashi Yamamoto', NULL),
-('43434343D', 'Lukas Fischer', NULL),
+('10101010A', 'James Dickson Myas', NULL), -- UN TRABAJADOR PUEDE NO ESTAR FIDELIZADO
+('21212121B', 'Stoikav Txondo', NULL),
+('32323232C', 'Kashime Kago', NULL),
+('43434343D', 'Lucho Portuano', NULL),
 ('54545454E', 'Mei Chen', NULL),
 ('65656565F', 'Olivia Brown', NULL),
-('76767676G', 'Emma Rossi', NULL),
+('76767676G', 'Cindy Nero', NULL),
 ('87878787H', 'Bruce Lee', NULL),
-('00000000A', 'John Smith', '00000000A'),
-('11111111B', 'Carlos Pérez', '11111111B');
+('00000000A', 'Mina Botieso', '00000000A'),
+('11111111B', 'María Umpa Jote', '11111111B');
 
 INSERT INTO TRABAJAR (idLocal, dniTrabajador) VALUES
 (1, '10101010A'), -- LIMPIEZA Y COCINERO EN UN MISMO LOCAL
